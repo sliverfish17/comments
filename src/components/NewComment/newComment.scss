@@ -1,0 +1,30 @@
+.newComment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: white;
+  padding: 48px 88px 0 88px;
+  &__form {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  &__picture {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  &__separator {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    background: #cdd7e5;
+    border: none;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

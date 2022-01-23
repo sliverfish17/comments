@@ -1,0 +1,42 @@
+.reply {
+  display: flex;
+  gap: 40px;
+  &__picture {
+    width: 88px;
+    height: 88px;
+  }
+  &__title {
+    display: flex;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    color: #131831;
+    margin: 0;
+  }
+  &__body {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #131831;
+  }
+  &__details {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #697082;
+  }
+}

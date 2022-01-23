@@ -1,15 +1,20 @@
 import { useTypedSelector } from "hooks/useTypedSelector";
-import React from "react";
+
+import Comment from "components/Comment";
+
+import "./commentList.scss";
 
 const CommentList: React.FC = () => {
   const { comments } = useTypedSelector((state) => state.comments);
 
   return (
-    <div>
-      {comments.map((comment) => (
-        <h1>{comment.replies?.map((reply) => reply.name)}</h1>
-      ))}
-    </div>
+    <>
+      <section className="commentList">
+        {comments.map((comment) => (
+          <Comment comment={comment} key={comment.id} />
+        ))}
+      </section>
+    </>
   );
 };
 

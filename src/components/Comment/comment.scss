@@ -1,0 +1,75 @@
+.comment {
+  display: flex;
+  gap: 32px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__picture {
+    width: 120px;
+    height: 120px;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    color: #131831;
+    margin: 0;
+  }
+  &__indicator {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #2856ae;
+    margin-left: 4px;
+  }
+  &__date {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #697082;
+    margin-left: 16px;
+  }
+  &__filling {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #131831;
+    margin-bottom: 23px;
+  }
+  &__buttons {
+    display: flex;
+    gap: 24px;
+  }
+  &__option {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #697082;
+    background: none;
+    border: none;
+  }
+  &__reply {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 26px;
+  }
+  &__replies {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+  }
+}

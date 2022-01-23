@@ -21,6 +21,26 @@ const commentsReducer = (
         comments: action.payload,
         isLoading: false,
       };
+    case CommentsActionTypes.ADD_COMMENT:
+      return {
+        ...state,
+        comments: [...state.comments, action.payload],
+      };
+    case CommentsActionTypes.DELETE_COMMENT:
+      return {
+        ...state,
+        comments: [
+          ...state.comments.filter((comment) => comment.id !== action.payload),
+        ],
+      };
+    case CommentsActionTypes.EDIT_COMMENT:
+      return {
+        ...state,
+      };
+    case CommentsActionTypes.ADD_REPLY:
+      return {
+        ...state,
+      };
 
     default:
       return state;
