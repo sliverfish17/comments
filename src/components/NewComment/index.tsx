@@ -7,37 +7,42 @@ import { useTypedSelector } from "hooks/useTypedSelector";
 import { useActions } from "hooks/useTypedAction";
 
 const Comments: React.FC = () => {
-  const { comments } = useTypedSelector((state) => state.comments);
+  const { user } = useTypedSelector((state) => state.user);
 
   const { addNewComment } = useActions();
 
   const addNewPost = (text: string) => {
-    const newPost = {
-      userId: comments[0].userId,
-      id: Date.now(),
-      name: comments[0].name,
-      body: text,
-      date: +new Date() / 1000,
-      avatar: comments[0].avatar,
-      replies: [],
-    };
-    addNewComment(newPost);
+    if (user) {
+      const newPost = {
+        userId: user.userId,
+        id: Date.now(),
+        name: user.name,
+        body: text,
+        date: +new Date() / 1000,
+        avatar: user.avatar,
+        replies: [],
+      };
+      addNewComment(newPost);
+    }
   };
-
   return (
     <section className="newComment">
-      <div className="newComment__form">
-        <img
-          className="newComment__picture"
-          src={comments[0]?.avatar}
-          alt="Avatar"
-        />
-        <div className="newComment__input">
-          <MyInput fill="Send" sendInfo={addNewPost} />
-        </div>
-      </div>
+      {user && (
+        <>
+          <div className="newComment__form">
+            <img
+              className="newComment__picture"
+              src={user?.avatar}
+              alt="Avatar"
+            />
+            <div className="newComment__input">
+              <MyInput fill="Send" sendInfo={addNewPost} />
+            </div>
+          </div>
 
-      <hr className="newComment__separator" />
+          <hr className="newComment__separator" />
+        </>
+      )}
     </section>
   );
 };
